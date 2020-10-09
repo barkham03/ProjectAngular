@@ -9,13 +9,13 @@ import {DataService} from '../data.service';
 })
 export class DetailsComponent implements OnInit {
 
-  users$: Object;
+  users: any;
   constructor(private route: ActivatedRoute, private data: DataService) {
-    route.params.subscribe(params => this.users$ = params.id);
+    route.params.subscribe(params => this.users = params.id);
   }
 
   ngOnInit() {
-    this.data.getUser(this.users$).subscribe(data1 => this.users$ = data1);
+    this.data.getUser(this.users).subscribe(data1 => this.users = data1);
   }
 
 }

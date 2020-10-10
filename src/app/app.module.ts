@@ -4,11 +4,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {RouterModule, Routes} from '@angular/router'
 
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { PostsComponent } from './posts/posts.component';
-import { UsersComponent } from './users/users.component';
-import { DetailsComponent } from './details/details.component';
+import { SidebarComponent } from './Demo/sidebar/sidebar.component';
+import { PostsComponent } from './Demo/posts/posts.component';
+import { UsersComponent } from './Demo/users/users.component';
+import { DetailsComponent } from './Demo/details/details.component';
 import {HttpClientModule} from '@angular/common/http';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import {MaterialModule} from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetailsDialogComponent } from './shared/details-dialog/details-dialog.component';
 
 @NgModule({
   declarations: [
@@ -16,14 +20,21 @@ import {HttpClientModule} from '@angular/common/http';
     SidebarComponent,
     PostsComponent,
     UsersComponent,
-    DetailsComponent
+    DetailsComponent,
+    LandingPageComponent,
+    DetailsDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [],
+  entryComponents: [
+    DetailsDialogComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

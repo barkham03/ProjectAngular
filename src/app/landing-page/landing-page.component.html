@@ -1,0 +1,23 @@
+<div class="main-container">
+    <div class="sub-container">
+        <div class="landing-page">
+            <div class="landingImage" fxLayout="row" flex="">
+                <img class="img" src="../../assets/images/landingPage1.png">
+                <div class="head">
+                    <p class="para">We Rent Mobile Phones</p>
+                    <button class="button" mat-button (click)="openDialog()">Rent</button>
+                </div>
+            </div>
+            <h1>TAKE A LOOK</h1>
+            <div class="sliders" fxLayout="row" flex="">
+                <ng-container *ngFor="let img of imgList; let i = index">
+                    <div class="slider" *ngIf="current == i" @fade>
+                        <img class="pictures" [src]="img">
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <h1>WHY TO RENT PHONES</h1>
+        <img style="width: 90%" src="../../assets/images/benefits.PNG">
+    </div>
+</div>

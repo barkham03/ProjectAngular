@@ -1,0 +1,16 @@
+<div mat-dialog-title class="">Enter Details</div>
+<div mat-dialog-content fxLayout="column">
+    <mat-form-field fxFlex=100>
+        <input matInput placeholder="Name">
+    </mat-form-field>
+    <mat-form-field fxFlex=100>
+        <input matInput placeholder="Email">
+    </mat-form-field>
+    <mat-form-field fxFlex=100>
+        <input matInput placeholder="Contact">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions fxLayout="row" fxLayoutAlign="end center">
+    <button mat-button class="secondary-action mr-8 ml-8" (click)="onCancel()">CANCEL</button>
+    <button mat-button class="act primary-action mr-8 ml-8" (click)="onConfirm()">CONFIRM</button>
+</div>

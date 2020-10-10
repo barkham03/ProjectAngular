@@ -18,8 +18,8 @@ export class LandingPageComponent implements OnInit {
 
   current = 0;
   imgList = [
-    '../../assets/images/iphonePic.png',
-    '../../assets/images/landingPage1.png',
+    '/assets/images/iphonePic.png',
+    '/assets/images/landingPage1.png',
   ];
 
   constructor(private dialog: MatDialog) { }

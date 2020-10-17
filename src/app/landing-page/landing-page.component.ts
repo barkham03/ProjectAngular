@@ -18,17 +18,12 @@ export class LandingPageComponent implements OnInit {
 
   current = 0;
   imgList = [
-    '/assets/images/iphonePic.png',
-    '/assets/images/landingPage1.png',
+    'http://barkham03.github.io/ProjectAngular/assets/images/iphonePic.png',
+    'http://barkham03.github.io/ProjectAngular/assets/images/landingPage1.png',
+    'http://barkham03.github.io/ProjectAngular/assets/images/benefits.PNG'
   ];
 
   constructor(private dialog: MatDialog) { }
-
-  ngOnInit() {
-    setInterval(() => {
-      this.current = ++this.current % this.imgList.length;
-    }, 2000);
-  }
 
   openDialog() {
     const dialogConfig = {
@@ -45,4 +40,11 @@ export class LandingPageComponent implements OnInit {
       console.log(res);
     });
   }
+
+  ngOnInit() {
+    // setInterval(() => {
+    //   this.current = ++this.current % this.imgList.length;
+    // }, 2000);
+  }
 }
+

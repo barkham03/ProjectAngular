@@ -1,15 +1,16 @@
 <div class="main-container">
     <div class="sub-container">
-        <div class="landing-page">
-            <div class="landingImage" fxLayout="row" flex="">
-                <img class="img" src="/assets/images/landingPage1.png">
+        <div>
+            <div class="landingImage">
+                <!-- <img class="img" src="assets/images/landingPage1.png"> -->
+                <img class="img" src="http://barkham03.github.io/ProjectAngular/assets/images/landingPage1.png">
                 <div class="head">
                     <p class="para">We Rent Mobile Phones</p>
                     <button class="button" mat-button (click)="openDialog()">Rent</button>
                 </div>
             </div>
             <h1>AVAILABLE PHONES</h1>
-            <div class="sliders" fxLayout="row" flex="">
+            <div class="sliders" fxLayout="row" fxLayoutAlign="center center">
                 <ng-container *ngFor="let img of imgList; let i = index">
                     <div class="slider" *ngIf="current == i" @fade>
                         <img class="pictures" [src]="img">
@@ -18,6 +19,7 @@
             </div>
         </div>
         <h1>WHY TO RENT PHONES</h1>
-        <img style="width: 90%" src="/assets/images/benefits.PNG">
+        <!-- <img style="width: 90%" src="assets/images/benefits.PNG"> -->
+        <img style="width: 90%" src="http://barkham03.github.io/ProjectAngular/assets/images/benefits.PNG">
     </div>
 </div>

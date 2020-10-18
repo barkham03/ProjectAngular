@@ -17,16 +17,16 @@ import {DetailsDialogComponent} from '../shared/details-dialog/details-dialog.co
 export class LandingPageComponent implements OnInit {
 
   current = 0;
-   imgList = [
-    '/assets/images/iphonePic.png',
-    '/assets/images/landingPage1.png',
-    '/assets/images/landingPic1.PNG'
-  ];
-  // imgList = [
-  //   'http://barkham03.github.io/ProjectAngular/assets/images/iphonePic.png',
-  //   'http://barkham03.github.io/ProjectAngular/assets/images/landingPage1.png',
-  //   'http://barkham03.github.io/ProjectAngular/assets/images/benefits.PNG'
+  //  imgList = [
+  //   '/assets/images/iphonePic.png',
+  //   '/assets/images/landingPage1.png',
+  //   '/assets/images/landingPic1.PNG'
   // ];
+  imgList = [
+    'http://barkham03.github.io/ProjectAngular/assets/images/iphonePic.png',
+    'http://barkham03.github.io/ProjectAngular/assets/images/landingPage1.png',
+    'http://barkham03.github.io/ProjectAngular/assets/images/landingPic1.PNG'
+  ];
 
   constructor(private dialog: MatDialog) { }
 

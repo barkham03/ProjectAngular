@@ -17,11 +17,16 @@ import {DetailsDialogComponent} from '../shared/details-dialog/details-dialog.co
 export class LandingPageComponent implements OnInit {
 
   current = 0;
-  imgList = [
-    'http://barkham03.github.io/ProjectAngular/assets/images/iphonePic.png',
-    'http://barkham03.github.io/ProjectAngular/assets/images/landingPage1.png',
-    'http://barkham03.github.io/ProjectAngular/assets/images/benefits.PNG'
+   imgList = [
+    '/assets/images/iphonePic.png',
+    '/assets/images/landingPage1.png',
+    '/assets/images/landingPic1.PNG'
   ];
+  // imgList = [
+  //   'http://barkham03.github.io/ProjectAngular/assets/images/iphonePic.png',
+  //   'http://barkham03.github.io/ProjectAngular/assets/images/landingPage1.png',
+  //   'http://barkham03.github.io/ProjectAngular/assets/images/benefits.PNG'
+  // ];
 
   constructor(private dialog: MatDialog) { }
 
@@ -42,9 +47,9 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    // setInterval(() => {
-    //   this.current = ++this.current % this.imgList.length;
-    // }, 2000);
+    setInterval(() => {
+      this.current = ++this.current % this.imgList.length;
+    }, 2000);
   }
 }
 

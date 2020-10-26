@@ -17,16 +17,55 @@ import {DetailsDialogComponent} from '../shared/details-dialog/details-dialog.co
 export class LandingPageComponent implements OnInit {
 
   current = 0;
-  //  imgList = [
-  //   '/assets/images/iphonePic.png',
-  //   '/assets/images/landingPage1.png',
-  //   '/assets/images/landingPic1.PNG'
-  // ];
-  imgList = [
-    'http://barkham03.github.io/ProjectAngular/assets/images/iphonePic.png',
-    'http://barkham03.github.io/ProjectAngular/assets/images/landingPage1.png',
-    'http://barkham03.github.io/ProjectAngular/assets/images/landingPic1.PNG'
+   imgList = [
+    '/assets/images/iphonePic.png',
+    '/assets/images/landingPage1.png',
+    '/assets/images/landingPic1.PNG'
   ];
+
+  event_list = [
+    {
+      event:' Event 1',
+      eventLocation:'Bangalore',
+      eventDescription:'In bangalore, first event is going to happen. Please be careful about it',
+      img: 'https://picsum.photos/900/500?random&t=1',
+      eventStartDate: new Date('2019/05/20'),
+      eventEndingDate: new Date('2019/05/24')
+    },
+     {
+      event:' Event 2',
+      eventLocation:'Dubai',
+      eventDescription:'Dubai is another place to host so,e, first event is going to happen. Please be careful about it',
+      img: 'https://picsum.photos/900/500?random&t=3',
+      eventStartDate: new Date('2019/07/28'),
+      eventEndingDate: new Date('2019/07/30')
+    },
+     {
+      event:' Event 3',
+      eventLocation:'New York',
+      eventDescription:'NewYork sits on top of event hosting',
+      img: 'https://picsum.photos/900/500?random&t=4',
+      eventStartDate: new Date('2020/05/20'),
+      eventEndingDate: new Date('2020/05/24')
+    },
+     {
+      event:' Event 4',
+      eventLocation:'Singapore',
+      eventDescription:'Singapore is another great hosting city',
+      img: 'https://picsum.photos/900/500?random&t=6',
+      eventStartDate: new Date('2018/05/20'),
+      eventEndingDate: new Date('2018/05/24')
+    },
+  ]
+  // imgList = [
+  //   'http://barkham03.github.io/ProjectAngular/assets/images/iphonePic.png',
+  //   'http://barkham03.github.io/ProjectAngular/assets/images/landingPage1.png',
+  //   'http://barkham03.github.io/ProjectAngular/assets/images/landingPic1.PNG'
+  // ];
+
+  upcomingEvents =  this.event_list.filter( event => event.eventStartDate > new Date());
+  pastEvents = this.event_list.filter(event => event.eventEndingDate < new Date());
+  currentEvents =  this.event_list.filter( event => (event.eventStartDate >= new Date() && (event.eventEndingDate <= new Date())));
 
   constructor(private dialog: MatDialog) { }
 
@@ -46,10 +85,11 @@ export class LandingPageComponent implements OnInit {
     });
   }
 
+  openChat() {
+
+  }
+
   ngOnInit() {
-    setInterval(() => {
-      this.current = ++this.current % this.imgList.length;
-    }, 2000);
   }
 }
 

@@ -1,27 +1,23 @@
-<div class="main-container">
-    <div class="sub-container">
-        <div>
-            <div class="landingImage">
-                <!-- <img class="img" src="assets/images/landingPage1.png"> -->
-                <img class="img" src="https://barkham03.github.io/ProjectAngular/assets/images/landingPage1.png">
-                <div class="head">
-                    <p class="para">We Rent Mobile Phones</p>
-                    <button class="button" mat-button (click)="openDialog()">Rent</button>
-                </div>
-            </div>
-            <h1>AVAILABLE PHONES</h1>
-            <div class="sliders">
-                <ng-container *ngFor="let img of imgList; let i = index">
-                    <div class="slider" *ngIf="current == i">
-                        <img class="pictures" [src]="img">
+<img class="img" src="assets/images/phones">
+<!-- href="https://api.whatsapp.com/send?phone=918055779086" -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 py-3">
+            <h2 class="pb-2">Upcoming Events</h2>
+            <ngb-carousel *ngIf="event_list">
+                <ng-template ngbSlide *ngFor="let event of pastEvents">
+                    <img [src]="event.img" alt="Random slide">
+                    <div class="carousel-caption">
+                        <h3>{{ event.eventLocation }}</h3>
+                        <p [innerText]="event.eventDescription"></p>
                     </div>
-                </ng-container>
-            </div>
-            <div>
-                <h1>WHY TO RENT PHONES</h1>
-                <!-- <img class="img" src="assets/images/benefits.PNG"> -->
-                <img style="min-width: 500px" src="https://barkham03.github.io/ProjectAngular/assets/images/benefits.PNG">
-            </div>
+                </ng-template>
+            </ngb-carousel>
         </div>
     </div>
+</div>
+<div class="connect" fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="center center">
+    <i class="fa fa-whatsapp icon" aria-hidden="true" (click)="openChat()"></i>
+    <i class="fa fa-facebook icon" aria-hidden="true"></i>
+    <a href="https://api.whatsapp.com/send?phone=918055779086">Click to connect</a>
 </div>

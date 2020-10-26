@@ -52,10 +52,10 @@ body {
 
 .sub-container {
     max-width: 1800px !important;
-    overflow: auto;
+    // overflow: auto;
     // margin-left: auto !important;
     // margin-right: auto !important;
-    height: 100vh;
+    // height: 100vh;
 }
 
 ::-webkit-scrollbar {
@@ -100,6 +100,17 @@ body {
 .mat-dialog-actions {
     margin: 0 !important;
     padding: 10px 20px 15px 20px !important;
+}
+
+.mat-toolbar {
+    background: black;
+    color: #fff;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 100 !important;
+    }
 }
 
 // @media (max-width: 640px) {

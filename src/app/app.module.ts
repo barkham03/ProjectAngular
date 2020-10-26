@@ -13,6 +13,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import {MaterialModule} from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailsDialogComponent } from './shared/details-dialog/details-dialog.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,14 +23,15 @@ import { DetailsDialogComponent } from './shared/details-dialog/details-dialog.c
     UsersComponent,
     DetailsComponent,
     LandingPageComponent,
-    DetailsDialogComponent
+    DetailsDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule
   ],
   providers: [],
   entryComponents: [

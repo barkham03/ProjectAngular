@@ -15,7 +15,7 @@ import {DetailsDialogComponent} from '../shared/details-dialog/details-dialog.co
   ]
 })
 export class LandingPageComponent implements OnInit {
-
+  len = new Array(10);
   current = 0;
    imgList = [
     '/assets/images/iphonePic.png',

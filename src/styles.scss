@@ -60,7 +60,7 @@ body {
 
 ::-webkit-scrollbar {
     width: 6px;
-    height: 6px;
+    height: 0px;
     background: transparent;
     border-radius: 5px;
 }
@@ -105,6 +105,14 @@ body {
 .mat-toolbar {
     background: black;
     color: #fff;
+}
+
+.carousel-inner {
+    height: 200px !important;
+}
+
+.carousel-item {
+    height: 200px;
 }
 
 @media (min-width: 1200px) {

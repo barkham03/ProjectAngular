@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, transition, animate, style } from '@angular/animations';
 import { MatDialog } from '@angular/material';
+import {Router} from '@angular/router';
 import {DetailsDialogComponent} from '../shared/details-dialog/details-dialog.component';
 
 @Component({
@@ -15,7 +16,7 @@ import {DetailsDialogComponent} from '../shared/details-dialog/details-dialog.co
   ]
 })
 export class LandingPageComponent implements OnInit {
-  len = new Array(10);
+  len = new Array(5);
   current = 0;
    imgList = [
     '/assets/images/iphonePic.png',
@@ -67,7 +68,7 @@ export class LandingPageComponent implements OnInit {
   pastEvents = this.event_list.filter(event => event.eventEndingDate < new Date());
   currentEvents =  this.event_list.filter( event => (event.eventStartDate >= new Date() && (event.eventEndingDate <= new Date())));
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private router: Router) { }
 
   openDialog() {
     const dialogConfig = {
@@ -83,6 +84,10 @@ export class LandingPageComponent implements OnInit {
     dialogRef.afterClosed().subscribe((res) => {
       console.log(res);
     });
+  }
+
+  openListItems() {
+    this.router.navigateByUrl('/list');
   }
 
   openChat() {

@@ -14,6 +14,8 @@ import {MaterialModule} from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailsDialogComponent } from './shared/details-dialog/details-dialog.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ListItemsComponent } from './list-items/list-items.component';
+import { ImgLazyLoadingComponent } from './img-lazy-loading/img-lazy-loading.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     DetailsComponent,
     LandingPageComponent,
     DetailsDialogComponent,
+    ListItemsComponent,
+    ImgLazyLoadingComponent
+  ],
+  exports: [
   ],
   imports: [
     BrowserModule,

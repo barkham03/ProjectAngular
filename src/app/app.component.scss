@@ -34,6 +34,11 @@ button {
 }
 
 .mat-sidenav-content {
+    // overflow: hidden;
     // font-size: 200%;
     // text-align: center;
+}
+
+.mat-drawer-content {
+    overflow: hidden;
 }

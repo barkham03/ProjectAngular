@@ -17,6 +17,7 @@
         </div>
     </div>
 </div>
+<p>Available Phones</p>
 <div fxLayout="row" style="width: 100%; overflow: auto; margin: 10px 0px" fxLayoutGap="10px">
     <div class="imgblock" fxLayout="column" *ngFor="let i of len">
         <div class="blocks" fxLayout="column">
@@ -27,16 +28,17 @@
         </div>
     </div>
 </div>
+<p>Top Brands</p>
 <div fxLayout="row" style="text-align: center" fxLayoutGap="10px" fxLayout="row wrap">
     <div *ngFor="let i of len" fxLayout="column">
-        <img class="collection" src="assets/images/phones">
+        <img class="collection" src="assets/images/phones" (click)="openListItems()">
         <p>IPHONE</p>
     </div>
 </div>
 
 
 
-<div class="connect" fxLayout="row" fxLayoutGap="30px" fxLayoutAlign="center center">
+<div class="connect" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
     <!-- <i class="fa fa-whatsapp icon" aria-hidden="true" (click)="openChat()"></i> -->
     <a href="https://www.facebook.com/barkha.mulchandani1503"><i class="fa fa-facebook icon" aria-hidden="true"></i></a>
     <a href="whatsapp://send?phone=918055779086"><i class="fa fa-whatsapp icon" aria-hidden="true" (click)="openChat()"></i></a>

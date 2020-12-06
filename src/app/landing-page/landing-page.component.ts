@@ -18,11 +18,11 @@ import {DetailsDialogComponent} from '../shared/details-dialog/details-dialog.co
 export class LandingPageComponent implements OnInit {
   len = new Array(5);
   current = 0;
-  //  imgList = [
-  //   '/assets/images/iphonePic.png',
-  //   '/assets/images/landingPage1.png',
-  //   '/assets/images/landingPic1.PNG'
-  // ];
+   imgList = [
+    '/assets/images/iphonePic.png',
+    '/assets/images/landingPage1.png',
+    '/assets/images/landingPic1.PNG'
+  ];
 
   event_list = [
     {
@@ -58,11 +58,11 @@ export class LandingPageComponent implements OnInit {
       eventEndingDate: new Date('2018/05/24')
     },
   ]
-  imgList = [
-    'http://barkham03.github.io/ProjectAngular/assets/images/iphonePic.png',
-    'http://barkham03.github.io/ProjectAngular/assets/images/landingPage1.png',
-    'http://barkham03.github.io/ProjectAngular/assets/images/landingPic1.PNG'
-  ];
+  // imgList = [
+  //   'http://barkham03.github.io/ProjectAngular/assets/images/iphonePic.png',
+  //   'http://barkham03.github.io/ProjectAngular/assets/images/landingPage1.png',
+  //   'http://barkham03.github.io/ProjectAngular/assets/images/landingPic1.PNG'
+  // ];
 
   upcomingEvents =  this.event_list.filter( event => event.eventStartDate > new Date());
   pastEvents = this.event_list.filter(event => event.eventEndingDate < new Date());

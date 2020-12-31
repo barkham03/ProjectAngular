@@ -39,8 +39,23 @@
 //        }
 //    }
 // }
+@import "~font-awesome/css/font-awesome.css";
+.fa,
+.fab,
+.fas,
+.far {
+    transform: scale(1.0, 1.0);
+    font-size: 1.5rem;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    display: none !important;
+}
+
 body {
     overflow: auto;
+    font-family: sans-serif !important;
 }
 
 .main-container {
@@ -48,6 +63,38 @@ body {
     height: 100%;
     // position: fixed;
     // top: 64px;
+}
+
+h2 {
+    font-size: 12px !important;
+    font-family: system-ui !important;
+}
+
+h6 {
+    color: black;
+    padding: 10px 10px;
+    font-family: 'Font Awesome 5 Brands';
+    font-size: 1.5rem !important;
+}
+
+.pdb {
+    padding-bottom: 10px;
+}
+
+.fs10 {
+    font-size: 10px;
+}
+
+.fs12 {
+    font-size: 12px;
+}
+
+.mb0 {
+    margin-bottom: 0px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
 }
 
 .sub-container {
@@ -119,6 +166,25 @@ body {
     .container {
         max-width: 100 !important;
     }
+}
+
+.footer {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    bottom: 1px;
+    right: 5px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.myfloat {
+    margin: 10px;
 }
 
 // @media (max-width: 640px) {

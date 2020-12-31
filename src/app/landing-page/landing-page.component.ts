@@ -18,11 +18,12 @@ import {DetailsDialogComponent} from '../shared/details-dialog/details-dialog.co
 export class LandingPageComponent implements OnInit {
   len = new Array(5);
   current = 0;
-   imgList = [
-    '/assets/images/iphonePic.png',
-    '/assets/images/landingPage1.png',
-    '/assets/images/landingPic1.PNG'
-  ];
+  details = 0;
+  //  imgList = [
+  //   '/assets/images/iphonePic.png',
+  //   '/assets/images/landingPage1.png',
+  //   '/assets/images/landingPic1.PNG'
+  // ];
 
   event_list = [
     {
@@ -90,8 +91,9 @@ export class LandingPageComponent implements OnInit {
     this.router.navigateByUrl('/list');
   }
 
-  openChat() {
-
+  showDetails(seq) {
+    console.log(seq);
+    this.details = seq;
   }
 
   ngOnInit() {

@@ -16,6 +16,7 @@ import { DetailsDialogComponent } from './shared/details-dialog/details-dialog.c
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ListItemsComponent } from './list-items/list-items.component';
 import { ImgLazyLoadingComponent } from './img-lazy-loading/img-lazy-loading.component';
+import {AnimateModule} from './animate/animate.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ImgLazyLoadingComponent } from './img-lazy-loading/img-lazy-loading.com
     HttpClientModule,
     MaterialModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    AnimateModule
   ],
   providers: [],
   entryComponents: [

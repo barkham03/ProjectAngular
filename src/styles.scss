@@ -99,6 +99,7 @@ h6 {
 
 .sub-container {
     max-width: 1800px !important;
+    font: 400 12px/20px Roboto, "Helvetica Neue", sans-serif;
     // overflow: auto;
     // margin-left: auto !important;
     // margin-right: auto !important;
@@ -154,8 +155,14 @@ h6 {
     color: #fff;
 }
 
+.carousel-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .carousel-inner {
-    height: 200px !important;
+    height: 315px !important;
 }
 
 .carousel-item {

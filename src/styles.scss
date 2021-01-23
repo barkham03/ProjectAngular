@@ -40,6 +40,7 @@
 //    }
 // }
 @import "~font-awesome/css/font-awesome.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 .fa,
 .fab,
 .fas,
@@ -66,7 +67,7 @@ body {
 }
 
 h2 {
-    font-size: 12px !important;
+    font-size: 15px !important;
     font-family: system-ui !important;
 }
 
@@ -74,7 +75,7 @@ h6 {
     color: black;
     padding: 10px 10px;
     font-family: 'Font Awesome 5 Brands';
-    font-size: 1.5rem !important;
+    font-size: 1.0rem !important;
 }
 
 .pdb {
@@ -97,9 +98,25 @@ h6 {
     margin-bottom: 10px;
 }
 
+.mb30 {
+    margin-bottom: 30px;
+}
+
+.bbtm {
+    border-bottom: 0.5px solid lightgrey;
+}
+
+button {
+    height: 23px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
 .sub-container {
     max-width: 1800px !important;
     font: 400 12px/20px Roboto, "Helvetica Neue", sans-serif;
+    // background-color: black;
+    color: black;
     // overflow: auto;
     // margin-left: auto !important;
     // margin-right: auto !important;
@@ -159,6 +176,7 @@ h6 {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+    padding: 0px 10px;
 }
 
 .carousel-inner {

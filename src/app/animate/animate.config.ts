@@ -23,8 +23,8 @@ export function animateConfigFactory(value?: AnimateConfig): AnimateConfig {
 
     // Checks for Browser IntersectionObserver support  
     const ioSupported = 'IntersectionObserver' in window &&
-                        'IntersectionObserverEntry' in window &&
-                        'intersectionRatio' in window.IntersectionObserverEntry.prototype;
+                        'IntersectionObserverEntry' in window; //&&
+                        // 'intersectionRatio' in window.IntersectionObserverEntry.prototype;
 
     // Applies the best mode
     triggerMode = ioSupported ? 'intersectionObserver' : 'scrolling';

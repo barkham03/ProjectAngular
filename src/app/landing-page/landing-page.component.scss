@@ -20,24 +20,31 @@
     
     .imgblock {
         width: 170px;
-        height: 160px;
-        // border: outset;
-        // margin: 5px;
+        height: 270px;
+        margin: 0px 10px;
+        background: white;
+        padding: 20px 20px;
     }
     
     .imges {
         // width: 85%;
-        height: 80%;
+        height: 90%;
         // margin: 12px;
     }
     
     .blocks {
         width: 140px;
-        height: 140px;
-        margin: 5px;
+        height: 200px;
+        margin: 0px -5px;
         // text-align: center;
         // font-size: large;
         // font-weight: bold;
+    }
+    
+    .showmore {
+        height: 23px;
+        font-size: 12px;
+        border-radius: 5px;
     }
     
     .collection {
@@ -69,7 +76,7 @@
     }
     
     .icon_display {
-        margin: 10px 5px;
+        margin: 35px 30px;
         // box-shadow: 2px 4px 2px #888;
         // width: 90%;
         // height: 75px;

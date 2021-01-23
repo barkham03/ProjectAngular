@@ -87,7 +87,7 @@ export class LandingPageComponent implements OnInit {
     });
   }
 
-  openListItems() {
+  listMoreItems() {
     this.router.navigateByUrl('/list');
   }
 

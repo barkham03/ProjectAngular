@@ -38,6 +38,7 @@ export class AnimateService {
   }
 
   constructor(private scroll: ScrollDispatcher, private viewPort: ViewportRuler, private zone: NgZone,
+  // tslint:disable-next-line:align
   @Optional() @Inject(ANIMATE_CONFIG) private config?: AnimateConfig) {
 
     // Gets the module configuration

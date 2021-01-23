@@ -2,7 +2,7 @@
 <!-- <img class="img" src="https://barkham03.github.io/ProjectAngular/assets/images/phones"> -->
 <!-- href="https://api.whatsapp.com/send?phone=918055779086" -->
 <div class="sub-container">
-    <div class="carousel-container" wmAnimate="rollIn" aos>
+    <div class="carousel-container" wmAnimate="landing" aos>
         <div class="row">
             <div class="col-md-12 mb10">
                 <!-- <h2 class="pb-2">Upcoming Events</h2> -->
@@ -21,13 +21,16 @@
 
     <h6>Available Phones</h6>
     <div fxLayout="row" style="width: 100%; overflow: auto" fxLayoutGap="">
-        <div class="imgblock" fxLayout="column" *ngFor="let i of len">
+        <div class="imgblock" fxLayout="column" *ngFor="let list of len; let i=index;">
             <div class="blocks" fxLayout="column">
-                <img class="imges" src="assets/images/phones">
+                <img class="imges" src="https://barkham03.github.io/ProjectAngular/assets/images/iphone11">
                 <!-- <p style="font-size: 115px; font-weight: bold; margin-bottom: 0px">IPHONE 10</p> -->
-                <label class="fs12">Rent</label>
-                <label class="fs12 mb0"><i style="font-size:11px;" class="fas fa-rupee-sign"></i>  70000/mo</label>
             </div>
+            <div fxLayout="row">
+                <label fxFlex="40" class="fs12">Rent</label>
+                <button class="showmore" (click)="listMoreItems()">Show More</button>
+            </div>
+            <label class="fs12 mb0"><i style="font-size:11px;" class="fas fa-rupee-sign"></i>  70000/mo</label>
         </div>
     </div>
 
@@ -36,7 +39,7 @@
         <div fxLayoutAlign="center center" class="icon_circle">
             <i class="fas fa-check-circle"></i>
         </div>
-        <div style="padding: 15px 30px" fxLayout="column" fxLayoutWrap>
+        <div style="padding: 15px 0px" fxLayout="column" fxLayoutWrap>
             <h2>FINEST QUALITY PRODUCTS</h2>
             <label class="fs12">Quality matters to you, and us! That's why we do strict quality check for every product.</label>
         </div>
@@ -45,7 +48,7 @@
         <div fxLayoutAlign="center center" class="icon_circle">
             <mat-icon>assignment</mat-icon>
         </div>
-        <div style="padding: 15px 30px" fxLayout="column" fxLayoutWrap>
+        <div style="padding: 15px 0px" fxLayout="column" fxLayoutWrap>
             <h2>AS GOOD AS NEW</h2>
             <label class="fs12">With strict quality measures in place, we are committed to providing you products that are as good as new. </label>
         </div>
@@ -54,7 +57,7 @@
         <div fxLayoutAlign="center center" class="icon_circle">
             <mat-icon>call</mat-icon>
         </div>
-        <div style="padding: 15px 30px" fxLayout="column" fxLayoutWrap>
+        <div style="padding: 15px 0px" fxLayout="column" fxLayoutWrap>
             <h2>24*7 SUPPORT TO OUR CUSTOMERS</h2>
             <label class="fs12">Be it assisting you with orders and delivery or ensuring timely refunds and payments, our team is here to help you every step of the way. Just give us a shout out and we’ll respond in a jiffy.</label>
         </div>
@@ -63,7 +66,7 @@
         <div fxLayoutAlign="center center" class="icon_circle">
             <i class="far fa-times-circle"></i>
         </div>
-        <div style="padding: 15px 30px" fxLayout="column" fxLayoutWrap>
+        <div style="padding: 15px 0px" fxLayout="column" fxLayoutWrap>
             <h2>CLOSE - EARLY</h2>
             <label class="fs12">Be it assisting you with orders and delivery or ensuring timely refunds and payments, our team is here to help you every step of the way. Just give us a shout out and we’ll respond in a jiffy.</label>
         </div>
@@ -72,45 +75,45 @@
         <div fxLayoutAlign="center center" class="icon_circle">
             <i class="fas fa-sync-alt"></i>
         </div>
-        <div style="padding: 15px 30px" fxLayout="column" fxLayoutWrap>
+        <div style="padding: 15px 0px" fxLayout="column" fxLayoutWrap>
             <h2>REFUNDABLE SECURITY DEPOSIT</h2>
             <label class="fs12">Be it assisting you with orders and delivery or ensuring timely refunds and payments, our team is here to help you every step of the way. Just give us a shout out and we’ll respond in a jiffy.</label>
         </div>
     </div>
 
-    <div fxLayout="row" wmAnimate="zoomIn" aos>
-        <div fxLayout="column" fxLayoutAlign="center center" class="fs12" fxFlex="30">
-            <div fxLayout="column" fxLayoutAlign="start center">
+    <div style="margin-top: 50px" fxLayout="row">
+        <div fxLayout="column" fxLayoutAlign="center center" class="fs12" fxFlex="30" wmAnimate="flip" aos>
+            <div class="mb30" fxLayout="column" fxLayoutAlign="start center">
                 <i class="fas fa-piggy-bank"></i>
                 <p>Big Savings</p>
                 <!-- <p fxLayoutWrap>Your RMI (Rental Monthly Installment) is interest-free & more convenient that the heavily interest-ridden EMIs.</p> -->
             </div>
-            <div fxLayout="column" fxLayoutWrap fxLayoutAlign="center center">
+            <div class="mb30" fxLayout="column" fxLayoutWrap fxLayoutAlign="center center">
                 <i class="fas fa-percent"></i>
                 <p>No Interest</p>
                 <!-- <p fxLayoutWrap>The longer you rent for, the lesser you pay. Our pricing is fair and offers you the maximum savings.</p> -->
             </div>
-            <div fxLayout="column" fxLayoutAlign="start center">
+            <div class="mb30" fxLayout="column" fxLayoutAlign="start center">
                 <i class="fas fa-certificate"></i>
                 <p>Quality First</p>
                 <!-- <p fxLayoutWrap>We charge a nominal security deposit which is completely refundable. So, once your contract is complete and the damages verified, you get 100% of your money back.</p> -->
             </div>
         </div>
         <div fxFlex="40" fxLayoutAlign="center center">
-            <img width="130px" height="230px" src="assets/images/landing">
+            <img width="130px" height="230px" src="https://barkham03.github.io/ProjectAngular/assets/images/landing">
         </div>
-        <div class="fs12" fxLayout="column" fxLayoutAlign="center center">
-            <div fxLayout="column" fxLayoutAlign="start center">
+        <div class="fs12" fxLayout="column" fxLayoutAlign="center center" wmAnimate="flip" aos>
+            <div class="mb30" fxLayout="column" fxLayoutAlign="start center">
                 <i class="fas fa-user-clock"></i>
                 <p>Reliable Service</p>
                 <!-- <p fxLayoutWrap>Your RMI (Rental Monthly Installment) is interest-free & more convenient that the heavily interest-ridden EMIs.</p> -->
             </div>
-            <div fxLayout="column" fxLayoutAlign="start center">
+            <div class="mb30" fxLayout="column" fxLayoutAlign="center center">
                 <i class="far fa-money-bill-alt"></i>
                 <p fxLayoutWrap>Pay less, use more</p>
                 <!-- <p fxLayoutWrap>The longer you rent for, the lesser you pay. Our pricing is fair and offers you the maximum savings.</p> -->
             </div>
-            <div fxLayout="column" fxLayoutAlign="start center">
+            <div class="mb30" fxLayout="column" fxLayoutAlign="start center">
                 <i class="fas fa-clipboard-list"></i>
                 <p>Flexible Plans</p>
                 <!-- <p fxLayoutWrap>We charge a nominal security deposit which is completely refundable. So, once your contract is complete and the damages verified, you get 100% of your money back.</p> -->
@@ -119,9 +122,9 @@
     </div>
 
     <h6>Know more about SubCell</h6>
-    <div style="padding: 10px 10px">
-        <div fxLayout="column">
-            <div fxLayout="row">
+    <div style="padding: 0px 10px">
+        <div fxLayout="column" class="bbtm">
+            <div fxLayout="row" style="padding: 15px 10px">
                 <h2 fxFlex>Subcell</h2>
                 <mat-icon fxLayoutAlign="end end" (click)="showDetails(1)">add</mat-icon>
             </div>
@@ -132,8 +135,8 @@
                 <a>Contact</a>
             </div>
         </div><br>
-        <div fxLayout="column">
-            <div fxLayout="row">
+        <div fxLayout="column" class="bbtm">
+            <div fxLayout="row" style="padding: 15px 10px">
                 <h2 fxFlex>Information</h2>
                 <mat-icon fxLayoutAlign="end end" (click)="showDetails(2)">add</mat-icon>
             </div>
@@ -144,8 +147,8 @@
                 <a>Corporate Enquires</a>
             </div>
         </div><br>
-        <div fxLayout="column">
-            <div fxLayout="row">
+        <div fxLayout="column" class="bbtm">
+            <div fxLayout="row" style="padding: 15px 10px">
                 <h2 fxFlex>Policies</h2>
                 <mat-icon fxLayoutAlign="end end" (click)="showDetails(3)">add</mat-icon>
             </div>

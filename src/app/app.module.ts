@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {RouterModule, Routes} from '@angular/router'
@@ -39,7 +40,8 @@ import {AnimateModule} from './animate/animate.module';
     MaterialModule,
     BrowserAnimationsModule,
     NgbModule,
-    AnimateModule
+    AnimateModule,
+    FormsModule
   ],
   providers: [],
   entryComponents: [

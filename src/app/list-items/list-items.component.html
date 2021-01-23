@@ -2,11 +2,35 @@
 <!-- <div class="top-counter">
     <h1>Count : [{{count}}]</h1>
 </div> -->
-<ng-container *ngFor="let i of elements">
+<!-- <ng-container *ngFor="let i of elements">
     <app-img-lazy-loading></app-img-lazy-loading>
-</ng-container>
+</ng-container> -->
 <!-- <img class="img" [@foobar]="state" loading="lazy" src="assets/images/phones">
 <img class="img" [@foobar]="state" loading="lazy" src="assets/images/phones">
 <img class="img" [@foobar]="state" loading="lazy" src="assets/images/phones">
 <img class="img" [@foobar]="state" loading="lazy" src="assets/images/phones"> -->
 <!-- </div> -->
+
+<div class="sub-container">
+    <div *ngFor="let items of itemsList; let i=index">
+        <div class="main" wmAnimate="fadeInDown" aos>
+            <img class="img" [src]="items.img">
+            <div fxLayout="column">
+                <h2>{{items.name}}</h2>
+                <div fxLayout="row">
+                    <div fxLayout="column" fxFlex="60">
+                        <label class="fs12 mb0">Rent <i style="font-size:11px;" class="fas fa-rupee-sign"></i>  {{items.rent}} / month</label>
+                        <label>for <span (click)="showSlider=i;" style="color: blue; border-bottom: dashed">{{items.months}} months</span> </label>
+                    </div>
+                    <div fxLayoutAlign="end center">
+                        <button class="showmore">View Detail</button>
+                    </div>
+                </div>
+                <div fxLayout="column" *ngIf="showSlider === items.id">
+                    <mat-slider min="0" max="80" step="25" value="" [(ngModel)]="someValue"></mat-slider>
+                    <label style="word-spacing: 60px">3+ 6+ 12+ 18+</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

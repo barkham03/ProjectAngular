@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, HostListener, Directive } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import {itemsListing} from '../shared/common.mock';
+import {itemsListing, topBrands} from '../shared/common.mock';
 
 @Component({
   selector: 'app-list-items',
@@ -10,11 +10,12 @@ import {itemsListing} from '../shared/common.mock';
   ]
 })
 
-export class ListItemsComponent implements OnInit{
+export class ListItemsComponent implements OnInit {
   elements = [1];
   count = 1;
   itemsList;
-  someSlider;
+  topBrand;
+  someValue = 60;
 
   @HostListener('window:scroll', [])
   onscroll(): void {
@@ -27,12 +28,19 @@ export class ListItemsComponent implements OnInit{
     return (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
   }
 
-  callFunc() {
-    console.log('cccccccccccccccccc');
+  sliderChange(id) {
+    console.log(this.someValue);
+    this.itemsList.forEach(item => {
+      if (id === item.id) {
+        // tslint:disable-next-line:max-line-length
+        item.rent = this.someValue === 30 ? (50 / 100 * item.price) : this.someValue === 0 ? (60 / 100 * item.price) : 30 / 100 * item.price;
+      }
+    });
   }
 
   ngOnInit() {
     this.count <= 2 ? this.elements = [...this.elements, this.count++] : '';
     this.itemsList = itemsListing;
+    this.topBrand = topBrands;
   }
 }

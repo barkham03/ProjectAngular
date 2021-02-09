@@ -11,26 +11,33 @@
 <img class="img" [@foobar]="state" loading="lazy" src="assets/images/phones"> -->
 <!-- </div> -->
 
-<div class="sub-container">
-    <div *ngFor="let items of itemsList; let i=index">
-        <div class="main" wmAnimate="fadeInDown" aos>
-            <img class="img" [src]="items.img">
-            <div fxLayout="column">
-                <h2>{{items.name}}</h2>
-                <div fxLayout="row">
-                    <div fxLayout="column" fxFlex="60">
-                        <label class="fs12 mb0">Rent <i style="font-size:11px;" class="fas fa-rupee-sign"></i>  {{items.rent}} / month</label>
-                        <label>for <span (click)="showSlider=i;" style="color: blue; border-bottom: dashed">{{items.months}} months</span> </label>
+<div class="sub-container" fxLayout="column">
+    <div class="main" fxLayout="row" fxLayoutGap="" fxLayout="row wrap">
+        <div style="width: 100%; overflow: auto" fxLayout="row" fxLayoutGap="40px">
+            <div *ngFor="let brand of topBrand">
+                <div class="collection"><img class="img" [src]="brand.img" (click)="openListItems()"></div>
+                <h2>{{brand.name}}</h2>
+            </div>
+        </div>
+        <div *ngFor="let items of itemsList; let i=index">
+            <div wmAnimate="fadeInDown" aos>
+                <img class="img" [src]="items.img">
+                <div fxLayout="column">
+                    <h2>{{items.name}}</h2>
+                    <div fxLayout="row">
+                        <div fxLayout="column" fxFlex="60">
+                            <label class="fs12 mb0">Rent <i style="font-size:11px;" class="fas fa-rupee-sign"></i>  {{items.rent}} / month</label>
+                            <label>for <span (click)="showSlider=i;" style="color: blue; border-bottom: dashed">{{items.months}} months</span> </label>
+                        </div>
+                        <div fxLayoutAlign="center center">
+                            <button matButton class="showmore">View Detail</button>
+                        </div>
                     </div>
-                    <div fxLayoutAlign="end center">
-                        <button class="showmore">View Detail</button>
+                    <div fxLayout="column" *ngIf="showSlider === items.id">
+                        <mat-slider min="0" max="60" step="30" (change)="sliderChange(items.id)" [(ngModel)]="someValue"></mat-slider>
+                        <label style="word-spacing: 120px">6+ 12+ 18+</label>
                     </div>
-                </div>
-                <div fxLayout="column" *ngIf="showSlider === items.id">
-                    <mat-slider min="0" max="80" step="25" value="" [(ngModel)]="someValue"></mat-slider>
-                    <label style="word-spacing: 60px">3+ 6+ 12+ 18+</label>
                 </div>
             </div>
         </div>
     </div>
-</div>

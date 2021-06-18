@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, HostListener, Directive } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import {itemsListing, topBrands} from '../shared/common.mock';
+import {itemsListing, topBrands, detailItem} from '../shared/common.mock';
 
 @Component({
   selector: 'app-list-items',
@@ -16,6 +16,9 @@ export class ListItemsComponent implements OnInit {
   itemsList;
   topBrand;
   someValue = 60;
+  showMore = false;
+  viewFor = 'listingView';
+  itemsDetail;
 
   @HostListener('window:scroll', [])
   onscroll(): void {
@@ -33,7 +36,8 @@ export class ListItemsComponent implements OnInit {
     this.itemsList.forEach(item => {
       if (id === item.id) {
         // tslint:disable-next-line:max-line-length
-        item.rent = this.someValue === 30 ? (50 / 100 * item.price) : this.someValue === 0 ? (60 / 100 * item.price) : 30 / 100 * item.price;
+        let rent = this.someValue === 30 ? ((item.price + 0.08 - 0.15 + 0.13) / 12) : this.someValue === 0 ? ((item.price + 0.08 - 0.15 + 0.13) / 6) : ((item.price + 0.08 - 0.15 + 0.13) / 18);
+        item.rent = parseFloat(rent.toString()).toFixed(0);
       }
     });
   }
@@ -42,5 +46,6 @@ export class ListItemsComponent implements OnInit {
     this.count <= 2 ? this.elements = [...this.elements, this.count++] : '';
     this.itemsList = itemsListing;
     this.topBrand = topBrands;
+    this.itemsDetail = detailItem;
   }
 }

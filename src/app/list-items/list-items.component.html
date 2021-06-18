@@ -11,7 +11,7 @@
 <img class="img" [@foobar]="state" loading="lazy" src="assets/images/phones"> -->
 <!-- </div> -->
 
-<div class="sub-container" fxLayout="column">
+<div class="sub-container" fxLayout="column" *ngIf="viewFor === 'listingView'">
     <div class="main" fxLayout="row" fxLayoutGap="" fxLayout="row wrap">
         <div style="width: 100%; overflow: auto" fxLayout="row" fxLayoutGap="40px">
             <div *ngFor="let brand of topBrand">
@@ -30,14 +30,52 @@
                             <label>for <span (click)="showSlider=i;" style="color: blue; border-bottom: dashed">{{items.months}} months</span> </label>
                         </div>
                         <div fxLayoutAlign="center center">
-                            <button matButton class="showmore">View Detail</button>
+                            <button matButton (click)="viewFor = 'detailView'" class="showmore">View Detail</button>
                         </div>
                     </div>
                     <div fxLayout="column" *ngIf="showSlider === items.id">
-                        <mat-slider min="0" max="60" step="30" (change)="sliderChange(items.id)" [(ngModel)]="someValue"></mat-slider>
+                        <mat-slider label="Select Tenure" min="0" max="60" step="30" (change)="sliderChange(items.id)" [(ngModel)]="someValue"></mat-slider>
                         <label style="word-spacing: 120px">6+ 12+ 18+</label>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<div class="sub-container" *ngIf="viewFor === 'detailView'">
+    <div class="main" fxLayout="row" fxLayoutGap="" fxLayout="row wrap">
+        <div>
+            <img class="img" [src]="itemsDetail[0].img">
+        </div>
+        <div fxLayout="column">
+            <p>How long do you want to rent this for? (Months)</p>
+            <mat-slider label="Select Tenure" min="0" max="60" step="30" (change)="sliderChange(items.id)" [(ngModel)]="someValue"></mat-slider>
+        </div>
+        <div fxLayout="column">
+            <h2>Product Details</h2>
+            <div>{{(showMore) ? itemsDetail[0].productDetails : itemsDetail[0].productDetails | slice:0:100}}</div><span *ngIf="!showMore">...</span><a href="javascript:;" *ngIf="!showMore" (click)="showMore=true">[Show More]</a>
+            <div fxLayout="column" *ngIf="showMore">
+                <h2>Dimensions</h2>
+                <p>{{itemsDetail[0].dimensions}}</p>
+                <mat-tab-group>
+                    <mat-tab label="Features & Specifications">
+                        <div *ngFor="let feature of itemsDetail[0].features">{{feature.spec}}</div>
+                    </mat-tab>
+                    <mat-tab label="Safety Measures">
+                        <div *ngFor="let safe of itemsDetail[0].safety">{{safe.measures}}</div>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+        <p>What's included in Box ?</p>
+        <div style="width: 100%; overflow: auto" fxLayout="row" fxLayoutGap="40px">
+            <div *ngFor="let item of itemsDetail[0].boxInclude">
+                <div class="boxIncludeCss">
+                    <img [src]="item.svg" (click)="openListItems()">
+                    <h2>{{item.name}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
